@@ -1,25 +1,11 @@
 # CleanData
 
-Getting-and-Cleaning-Data-Week-4-Assignment
-This repo was created to finish the assignment for week 4 of Getting and Cleaning Data Coursera course.
+Getting and Cleaning Data - Course Project
 
-First, download and unzip the data file into your R working directory.
-Second, download the R source code into your R working directory.
-Finally, execute R source code to generate tidy data file.
-Data description
-The variables in the data X are sensor signals measured with waist-mounted smartphone from 30 subjects. The variable in the data Y indicates activity type the subjects performed during recording.
-
-Code explaination
-The code combined training dataset and test dataset, and extracted partial variables to create another dataset with the averages of each variable for each activity.
-
-New dataset
-The new generated dataset contained variables calculated based on the mean and standard deviation. Each row of the dataset is an average of each activity type for all subjects.
-
-The code was written based on the instruction of this assignment
-Read training and test dataset into R environment. Read variable names into R envrionment. Read subject index into R environment.
-
-Merges the training and the test sets to create one data set. Use command rbind to combine training and test set
-Extracts only the measurements on the mean and standard deviation for each measurement. Use grep command to get column indexes for variable name contains "mean()" or "std()"
-Uses descriptive activity names to name the activities in the data set Convert activity labels to characters and add a new column as factor
-Appropriately labels the data set with descriptive variable names. Give the selected descriptive names to variable columns
-From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject. Use pipeline command to create a new tidy dataset with command group_by and summarize_each in dplyr package
+This is the course project for the Getting and Cleaning Data Coursera course.
+The included R script, run_analysis.R, conducts the following:
+Download the dataset from web if it does not already exist in the working directory.
+Read both the train and test datasets and merge them into x(measurements), y(activity) and subject, respectively.
+Load the data(x's) feature, activity info and extract columns named 'mean'(-mean) and 'standard'(-std). Also, modify column names to descriptive. (-mean to Mean, -std to Std, and remove symbols like -, (, ))
+Extract data by selected columns(from step 3), and merge x, y(activity) and subject data. Also, replace y(activity) column to it's name by refering activity label (loaded step 3).
+Generate 'Tidy Dataset' that consists of the average (mean) of each variable for each subject and each activity. The result is shown in the file tidy_dataset.txt.
